@@ -16,7 +16,7 @@ class JugadorActivo(EstadoJugador):
         jugadora.goles += 1
     
     def registrar_asisencia(self, jugadora):
-        jugadora.asistenias += 1
+        jugadora.asistencias += 1
         
     def __str__(self):
         return "[ACTIVA]"
