@@ -1,7 +1,8 @@
 class Equipo:
-    def __init__(self, nombre):
+    def __init__(self, nombre, ciudad = ""):
 
         self.nombre = nombre
+        self.ciudad = ciudad
         self.jugadores = {}
 
     def añadir_jugador(self, jugador):
