@@ -1,4 +1,5 @@
 from .posicion import Posicion
+from. estado_jugador import EstadoJugador, JugadorActivo, JugadorSancionado
 
 
 class Jugadora:
@@ -9,7 +10,7 @@ class Jugadora:
         self.posicion = Posicion(posicion)
         self.goles = 0
         self.asistencias = 0
-        self.estado = "[ACTIVA]"
+        self.estado = JugadorActivo()
         
     def get_dorsal(self):
         return self.dorsal
@@ -27,19 +28,17 @@ class Jugadora:
         return self.asistencias
         
     def registrar_gol(self):
-        if self.estado == "[ACTIVA]":
-            self.goles += 1
-        else:
-            print("[AVISO] " + self.nombre + " está en la penalty box y no puede marcar goles.")
+        
+            self.estado.registrar_gol()
         
     def registrar_asistencia(self):
-        self.asistencias += 1
+        self.estado.registrar_asisencia()
         
     def sancionar(self, minutos):
-        self.estado = "[SANCIONADA]"
+        self.estado = JugadorSancionado()
 
     def liberar(self):
-        self.estado = "[ACTIVA]"
+        self.estado = JugadorActivo()
 
     def __repr__(self):
         return (
