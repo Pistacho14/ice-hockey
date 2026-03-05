@@ -6,6 +6,9 @@ class EstadoJugador():
     def registrar_asisencia(self, jugadora):
         pass
     
+    def __str__(self):
+        return self.__class__.__name__
+    
     
 class JugadorActivo(EstadoJugador):
     
@@ -16,7 +19,7 @@ class JugadorActivo(EstadoJugador):
         jugadora.asistenias += 1
         
     def __str__(self):
-        return "ACTIVA"
+        return "[ACTIVA]"
     
 class JugadorSancionado(EstadoJugador):
     
@@ -27,4 +30,4 @@ class JugadorSancionado(EstadoJugador):
         print("[AVISO] " + jugadora.nombre + " está en la penalty box y no puede dar asistencias.")
         
     def __str__(self):
-        return "SANCIONADA"
+        return "[SANCIONADA]"
