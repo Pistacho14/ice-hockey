@@ -1,5 +1,5 @@
 class Equipo:
-    def __init__(self, nombre, ciudad = ""):
+    def __init__(self, nombre, ciudad=""):
 
         self.nombre = nombre
         self.ciudad = ciudad
@@ -29,7 +29,7 @@ class Equipo:
     def obtener_jugador(self, dorsal):
 
         return self.jugadores.get(dorsal)
-    
+
     def total_goles(self):
         goles = 0
         for jugador in self.jugadores.values():
@@ -38,10 +38,9 @@ class Equipo:
 
     def jugadores_activos(self):
         jugadores_en_juego = []
-        
+
         for jugador in self.jugadores.values():
             if jugador.estado == "[ACTIVA]":
                 jugadores_en_juego.append(jugador)
-        
+
         return jugadores_en_juego
-        
