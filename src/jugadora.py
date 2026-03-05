@@ -1,5 +1,5 @@
 from .posicion import Posicion
-from. estado_jugador import EstadoJugador, JugadorActivo, JugadorSancionado
+from .estado_jugador import EstadoJugador, JugadorActivo, JugadorSancionado
 
 
 class Jugadora:
@@ -11,29 +11,29 @@ class Jugadora:
         self.goles = 0
         self.asistencias = 0
         self.estado = JugadorActivo()
-        
+
     def get_dorsal(self):
         return self.dorsal
-    
+
     def get_nombre(self):
         return self.nombre
-    
+
     def get_posicion(self):
-        return self.posicion    
-    
+        return self.posicion
+
     def get_goles(self):
         return self.goles
-    
+
     def get_asistencias(self):
         return self.asistencias
-        
+
     def registrar_gol(self):
-        
-            self.estado.registrar_gol(self)
-        
+
+        self.estado.registrar_gol(self)
+
     def registrar_asistencia(self):
         self.estado.registrar_asisencia(self)
-        
+
     def sancionar(self, minutos):
         self.estado = JugadorSancionado()
 
