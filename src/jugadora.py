@@ -29,10 +29,10 @@ class Jugadora:
         
     def registrar_gol(self):
         
-            self.estado.registrar_gol()
+            self.estado.registrar_gol(self)
         
     def registrar_asistencia(self):
-        self.estado.registrar_asisencia()
+        self.estado.registrar_asisencia(self)
         
     def sancionar(self, minutos):
         self.estado = JugadorSancionado()
