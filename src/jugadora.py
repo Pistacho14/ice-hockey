@@ -53,5 +53,5 @@ class Jugadora:
             + "   A: "
             + str(self.asistencias)
             + "  "
-            + self.estado
+            + str(self.estado)
         )
