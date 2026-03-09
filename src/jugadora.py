@@ -39,6 +39,9 @@ class Jugadora:
 
     def liberar(self):
         self.estado = JugadorActivo()
+        
+    def es_activo(self):
+        return isinstance(self.estado, JugadorActivo)
 
     def __repr__(self):
         return (
