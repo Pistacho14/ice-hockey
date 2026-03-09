@@ -34,10 +34,4 @@ class Equipo:
         return sum(jugador.get_goles() for jugador in self.jugadores.values())
 
     def jugadores_activos(self):
-        jugadores_en_juego = []
-
-        for jugador in self.jugadores.values():
-            if jugador.estado == "[ACTIVA]":
-                jugadores_en_juego.append(jugador)
-
-        return jugadores_en_juego
+        return [jugador for jugador in self.jugadores.values() if jugador.es_activo()]
