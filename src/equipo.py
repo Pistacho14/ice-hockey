@@ -31,10 +31,7 @@ class Equipo:
         return self.jugadores.get(dorsal)
 
     def total_goles(self):
-        goles = 0
-        for jugador in self.jugadores.values():
-            goles += jugador.get_goles()
-        return goles
+        return sum(jugador.get_goles() for jugador in self.jugadores.values())
 
     def jugadores_activos(self):
         jugadores_en_juego = []
